@@ -79,6 +79,14 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public boolean updatePassword(int memberId, String password) {
+        if (memberId <= 0 || password == null || password.trim().isEmpty()) {
+            return false;
+        }
+        return memberDAO.updatePassword(memberId, password.trim());
+    }
+
+        @Override
     public boolean deductBalance(int memberId, BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             return false;

@@ -14,6 +14,7 @@ public interface MemberService {
     List<Member> getMembersByLevel(int level);
     List<Member> getMembersByGender(int gender);
     boolean updateMember(Member member);
+    boolean updatePassword(int memberId, String password);
     boolean deductBalance(int memberId, BigDecimal amount);
     boolean updatePoints(int memberId, int points);
     boolean deleteMember(int memberId);

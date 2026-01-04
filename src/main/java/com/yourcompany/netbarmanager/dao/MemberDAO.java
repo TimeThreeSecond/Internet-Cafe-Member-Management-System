@@ -14,6 +14,7 @@ public interface MemberDAO {
     List<Member> findByLevel(int level);
     List<Member> findByGender(int gender);
     boolean update(Member member);
+    boolean updatePassword(int memberId, String password);
     boolean updateBalance(int memberId, BigDecimal balance);
     boolean updatePoints(int memberId, int points);
     boolean delete(int memberId);

@@ -39,7 +39,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<%= request.getContextPath() %>/member/profile"><i class="fas fa-user me-2"></i>个人资料</a></li>
-                        <li><a class="dropdown-item" href="<%= request.getContextPath() %>/changePassword"><i class="fas fa-lock me-2"></i>修改密码</a></li>
+                        <li><a class="dropdown-item" href="<%= request.getContextPath() %>/member/changePassword"><i class="fas fa-lock me-2"></i>修改密码</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<%= request.getContextPath() %>/logout"><i class="fas fa-sign-out-alt me-2"></i>退出登录</a></li>
                     </ul>
@@ -190,7 +190,7 @@
                             </div>
                             <div class="col-md-3 col-sm-6 mb-3">
                                 <div class="d-grid">
-                                    <a href="<%= request.getContextPath() %>/changePassword" class="btn btn-outline-warning">
+                                    <a href="<%= request.getContextPath() %>/member/changePassword" class="btn btn-outline-warning">
                                         <i class="fas fa-lock me-2"></i>
                                         修改密码
                                     </a>

@@ -51,7 +51,6 @@
                     <%= admin.getRealName() != null ? admin.getRealName() : admin.getUsername() %>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>个人资料</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="<%= request.getContextPath() %>/logout"><i class="fas fa-sign-out-alt me-2"></i>退出登录</a></li>
                 </ul>

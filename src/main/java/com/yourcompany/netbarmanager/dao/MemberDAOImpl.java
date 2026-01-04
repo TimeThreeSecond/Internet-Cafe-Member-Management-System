@@ -374,6 +374,28 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
+    public boolean updatePassword(int memberId, String password) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = DBUtil.getConnection();
+            String sql = "UPDATE member SET password = ? WHERE member_id = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, password);
+            pstmt.setInt(2, memberId);
+
+            int result = pstmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            DBUtil.close(conn, pstmt, null);
+        }
+    }
+
+    @Override
     public boolean updateBalance(int memberId, java.math.BigDecimal balance) {
         Connection conn = null;
         PreparedStatement pstmt = null;

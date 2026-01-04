@@ -102,6 +102,25 @@ public class TempCardDAOImpl implements TempCardDAO {
         return list;
     }
 
+    @Override
+    public TempCard findByCardId(String cardId) {
+        return findById(cardId);
+    }
+
+    @Override
+    public boolean updateBalance(String cardId, java.math.BigDecimal balance) {
+        String sql = "UPDATE temp_card SET balance = ? WHERE card_id = ?";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setBigDecimal(1, balance);
+            pstmt.setString(2, cardId);
+            return pstmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private TempCard extractTempCard(ResultSet rs) throws SQLException {
         TempCard tempCard = new TempCard();
         tempCard.setCardId(rs.getString("card_id"));

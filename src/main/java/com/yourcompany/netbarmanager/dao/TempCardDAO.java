@@ -8,6 +8,8 @@ public interface TempCardDAO {
     boolean update(TempCard tempCard);
     boolean delete(String cardId);
     TempCard findById(String cardId);
+    TempCard findByCardId(String cardId);
     List<TempCard> findAll();
     List<TempCard> findByStatus(int status);
+    boolean updateBalance(String cardId, java.math.BigDecimal balance);
 }
